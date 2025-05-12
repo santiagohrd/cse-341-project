@@ -1,0 +1,19 @@
+{
+  "name": "cse-341-project",
+  "version": "1.0.0",
+  "description": "exam",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/santiagohrd/cse-341-project.git"
+  },
+  "author": "Santiago Herrera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/santiagohrd/cse-341-project/issues"
+  },
+  "homepage": "https://github.com/santiagohrd/cse-341-project#readme"
+}
