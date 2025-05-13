@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/santiagohrd/cse-341-project/issues"
   },
-  "homepage": "https://github.com/santiagohrd/cse-341-project#readme"
+  "homepage": "https://github.com/santiagohrd/cse-341-project#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
