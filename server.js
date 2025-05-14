@@ -1,6 +1,8 @@
 // Importar el modulo express
 const express = require('express');
 
+const mongodb = require('./data/contacts');
+
 // Se crea una instancia de una aplicación Express
 // app representa el servidor y es el que se usará para configurar rutas
 const app = express()
@@ -11,5 +13,13 @@ const port = process.env.PORT || 3000;
 
 app.use('/', require('./routes'));
 
-// inicia el servidor y lo pone a escuchar peticiones en el puerto especificado
-app.listen(port, () => (console.log(`Running on port ${port}`)));
+
+mongodb.initDb((err) => {
+    if (err) {
+        console.log(err)
+    }
+    else {
+        // inicia el servidor y lo pone a escuchar peticiones en el puerto especificado
+        app.listen(port, () => (console.log(`Dabase is listening and node Running on port ${port}`)));
+    }
+});
