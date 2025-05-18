@@ -10,10 +10,11 @@ POST http://localhost:3000/users HTTP/1.1
 Content-Type: application/json
 
 {
-    "email": "test5@example.com",
-    "username": "test5@test.com",
-    "name": "Hello Test",
-    "ipaddress": "94.121.168.53"
+    "email": "santiagoherrera@byu.edu",
+    "birthday": "01/12/1993",
+    "favoriteColor": "red",
+    "firstName": "Santiago",
+    "lastName": "Herrera"
 }
 
 ### PUT user
@@ -21,10 +22,11 @@ PUT http://localhost:3000/users/6823f11a430b1a29234d4a2e HTTP/1.1
 Content-Type: application/json
 
 {
-    "email": "test@example.com",
-    "username": "test1@test.com",
-    "name": "Hello1",
-    "ipaddress": "94.121.168.53"
+    "email": "santiagoherrera@byu.edu",
+    "birthday": "01/12/1993",
+    "favoriteColor": "black",
+    "firstName": "Santiago",
+    "lastName": "Herrera"
 }
 
 ### Delete

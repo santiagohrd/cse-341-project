@@ -23,10 +23,11 @@ const getSingle = async (req, res) => {
 const createUser = async (req, res) => {
     //#swagger.tags=['Users']
     const user = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
         email: req.body.email,
-        username: req.body.username,
-        name: req.body.name,
-        ipaddress: req.body.ipaddress
+        favoriteColor: req.body.favoriteColor,
+        birthday: req.body.birthday
     };
 
     const response = await mongodb.getDatabase().db().collection('users').insertOne(user);
@@ -41,10 +42,11 @@ const updateUser = async (req, res) => {
     //#swagger.tags=['Users']
     const userId = new ObjectId(req.params.id);
     const user = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
         email: req.body.email,
-        username: req.body.username,
-        name: req.body.name,
-        ipaddress: req.body.ipaddress
+        favoriteColor: req.body.favoriteColor,
+        birthday: req.body.birthday
     };
 
     const response = await mongodb.getDatabase().db().collection('users').replaceOne({_id: userId}, user);
