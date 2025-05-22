@@ -3,21 +3,50 @@ const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
     //#swagger.tags=['Users']
-    const result = await mongodb.getDatabase().db().collection('users').find();
-    result.toArray().then((users) => {
-        res.setHeader('Content-type', 'application/json');
-        res.status(200).json(users);
-    });
+
+    // const result = await mongodb.getDatabase().db().collection('users').find();
+    // result.toArray().then((users) => {
+    //     res.setHeader('Content-type', 'application/json');
+    //     res.status(200).json(users);
+    // });
+
+    mongodb
+        .getDatabase()
+        .db()
+        .collection('contacts')
+        .find()
+        .toArray((err, lists) => {
+            if (err) {
+                res.status(400).json({message: err});
+            }
+            res.setHeader('Content-Type', 'application/json');
+            res.status(200).json(lists);
+        })
 };
 
-const getSingle = async (req, res) => {
+// const getSingle = async (req, res) => {
+const getSingle = (req, res) => {
+
     //#swagger.tags=['Users']
     const userId = new ObjectId(req.params.id);
-    const result = await mongodb.getDatabase().db().collection('users').find({_id: userId});
-    result.toArray().then((users) => {
-        res.setHeader('Content-type', 'application/json');
-        res.status(200).json(users[0]);
-    });
+    // const result = await mongodb.getDatabase().db().collection('users').find({_id: userId});
+    // result.toArray().then((users) => {
+    //     res.setHeader('Content-type', 'application/json');
+    //     res.status(200).json(users[0]);
+    // });
+    
+    mongodb
+        .getDatabase()
+        .db()
+        .collection('contacts')
+        .find({_id: userId})
+        .toArray((err, lists) => {
+            if (err) {
+                res.status(400).json({message: err});
+            }
+            res.setHeader('Content-Type', 'application/json');
+            res.status(200).json(result[0]);
+        })
 };
 
 const createUser = async (req, res) => {
