@@ -9,12 +9,10 @@ router.get('/:id', userController.getSingle);
 
 // router.post('/', userController.createUser);
 // router.put('/:id', userController.updateUser);
-router.post('/', validation.saveContact, contactsController.createContact);
-router.put('/:id', validation.saveContact, contactsController.updateContact);
+router.post('/', validation.saveContact, userController.createUser);
+router.put('/:id', validation.saveContact, userController.updateUser);
 
 
 router.delete('/:id', userController.deleteUser);
-
-
 
 module.exports = router;
